@@ -36,7 +36,9 @@ class MaoYan:
 
         r_list = []
         for item in list:
-            r_tuple = (item[0].strip(), item[1].strip(), item[2].strip())
+            actor = item[1].strip()
+            time = item[2].strip()
+            r_tuple = (item[0].strip(), actor[3:], time[5:])
             # print(r_tuple)
             mysql_.add_del_upd(sql, r_tuple)
             r_list.append(r_tuple)
